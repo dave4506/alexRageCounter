@@ -1,12 +1,7 @@
 window.onload = function(e){
   var rageCounter = 9000;
   var start = 3.00
-  /*
-  var startRef = firebase.database().ref('rage').limitToLast(1).then(function(snapshot) {
-    var username = snapshot.val().username;
-    // ...
-  });
-  */
+  var dbRef = firebase.database().ref('/rage/');
   var timerID = setInterval(function() {
     start +=0.1
     document.getElementById("timer").textContent=start.toFixed(1)+"s"
@@ -16,9 +11,9 @@ window.onload = function(e){
     alert("He raged! Hallelujah! Tell all who is playing the alex rage drinking game to start drinking!")
     rageCounter++;
     document.getElementById("rage-counter").textContent="Rage Counter: "+rageCounter;
+    dbRef.push({rageTime:Date.now()});
   }
   document.getElementById("rage-counter").textContent="Rage Counter: "+rageCounter;
-
 }
 
 window.onunload = function() {
