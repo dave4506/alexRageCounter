@@ -6,6 +6,9 @@ window.onload = function(e){
     start +=0.1
     document.getElementById("timer").textContent=start.toFixed(1)+"s"
   },100);
+  dbRef.limitToLast(1).on('child_added', function(data) {
+    start = Math.abs(Date.now() - data.val().rageTime);
+  });
   document.getElementById("rage").onclick = function() {
     start = 0;
     alert("He raged! Hallelujah! Tell all who is playing the alex rage drinking game to start drinking!")
