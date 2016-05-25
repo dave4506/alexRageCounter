@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Alex's Rage Counter</title>
+		<link rel="stylesheet" href="css/app.css">
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyCX4uB9wRegrDgNI8iO-a5SW4jffbqY55c",
+        authDomain: "project-356442512711359558.firebaseapp.com",
+        databaseURL: "https://project-356442512711359558.firebaseio.com",
+        storageBucket: "",
+      };
+      firebase.initializeApp(config);
+    </script>
+	</head>
+	<body>
+		<div class="wrapper">
+      <h4>Alex's Rage Counter</h4>
+      <h2 id="timer">0.00s</h2>
+      <button id="rage" type="button">He raged didn't he?</button>
+      <p id="rage-counter">Rage Counter: 000</p>
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>
